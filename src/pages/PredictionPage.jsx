@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
   export default function PredictionPage() {
-    
-    const [formData, setFormData] = useState({
+
+  const [formData, setFormData] = useState({
     income: '',
     age: '',
     credit_score: '',
@@ -13,6 +13,18 @@ import { useState } from 'react';
   });
 
   const [result, setResult] = useState(null);
+
+  const token = localStorage.getItem("token");
+
+    if (!token) {
+      return (
+        <div className="p-4 max-w-md mx-auto text-center">
+          <h2 className="text-xl font-bold mb-4">Unauthorized</h2>
+          <p>Please log in or register to access predictions.</p>
+        </div>
+      );
+    }
+    
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,6 +40,7 @@ import { useState } from 'react';
       });
       const data = await res.json();
       setResult(data);
+      localStorage.setItem("lastPrediction", JSON.stringify(data));
     } catch (err) {
       console.error('Prediction failed:', err);
       setResult({ error: 'Prediction failed' });

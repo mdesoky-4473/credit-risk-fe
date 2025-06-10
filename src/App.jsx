@@ -1,5 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './pages/Login';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Login from './pages/LoginPage';
+import Registration from './pages/RegistrationPage'; 
 import Dashboard from './pages/Dashboard';
 import PredictionPage from './pages/PredictionPage';
 
@@ -7,10 +8,19 @@ function App() {
   return (
     <Router>
       <div className="app-container">
+        <nav className="bg-gray-800 text-white px-4 py-3 mb-4 flex gap-4">
+          <Link to="/" className="hover:underline">Login {" | "}  </Link>
+          <Link to="/register" className="hover:underline">Register  {" | "} </Link>
+          <Link to="/dashboard" className="hover:underline">Dashboard  {" | "} </Link>
+          <Link to="/prediction" className="hover:underline">Predict  </Link>
+        </nav>
+
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Registration />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/prediction" element={<PredictionPage />} />
+          <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </div>
     </Router>
