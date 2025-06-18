@@ -24,32 +24,31 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className = "dashboard-wrapper">
-      
-        <h2 className="page-title">Register</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            className="w-full border p-2"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            className="w-full border p-2"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit" className="button-primary">
-            Register
-          </button>
-        </form>
-        {message && <p className="mt-2">{message}</p>}
+    <div className="card">
+      <h2 className="page-title">Register</h2>
+
+      <form onSubmit={handleSubmit} className="form-grid">
+        <label>Email:</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+
+        <label>Password:</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+
+        <div></div>
+        <button type="submit" className="button-primary">Register</button>
+      </form>
+
+      {message && <p style={{ marginTop: "1rem", textAlign: "center" }}>{message}</p>}
     </div>
-   
   );
 }

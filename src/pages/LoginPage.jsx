@@ -5,7 +5,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ export default function LoginPage() {
       localStorage.setItem("token", res.data.token);
       localStorage.removeItem("predictionHistory");
       localStorage.removeItem("lastPrediction");
-      setIsLoggedIn(true); //
+      setIsLoggedIn(true);
     } catch (err) {
       console.error(err);
       setError("Invalid credentials or server error.");
@@ -29,35 +29,35 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="dashboard-wrapper">
-      
+    <div className="card">
       <h2 className="page-title">Login</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+
+      <form onSubmit={handleSubmit} className="form-grid">
+        <label>Email:</label>
         <input
-          className="w-full border p-2"
           type="email"
-          placeholder="Email"
           value={email}
+          required
           onChange={(e) => setEmail(e.target.value)}
-          required
         />
+
+        <label>Password:</label>
         <input
-          className="w-full border p-2"
           type="password"
-          placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
           required
+          onChange={(e) => setPassword(e.target.value)}
         />
+
+        <div></div>
         <button type="submit" className="button-primary">
           Login
         </button>
       </form>
 
-      {isLoggedIn && <p className="text-green-600 mt-2">Login successful!</p>}
+      {isLoggedIn && <p className="success-msg">Login successful!</p>}
+      {error && <p className="error-msg">{error}</p>}
 
-      {error && <p className="text-red-600 mt-2">{error}</p>}
-  </div>
-  
+    </div>
   );
 }
