@@ -3,11 +3,13 @@ import Login from './pages/LoginPage';
 import Registration from './pages/RegistrationPage'; 
 import Dashboard from './pages/Dashboard';
 import PredictionPage from './pages/PredictionPage';
+import './App.css';
+
 
 function App() {
   return (
     <Router>
-      <div className="app-container">
+      <div className="dashboard-wrapper">
         <nav className="bg-gray-800 text-white px-4 py-3 mb-4 flex gap-4">
           <Link to="/" className="hover:underline">Login {" | "}  </Link>
           <Link to="/register" className="hover:underline">Register  {" | "} </Link>

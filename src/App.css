@@ -1,8 +1,50 @@
+/* App.css or index.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .dashboard-wrapper {
+  max-width: 600px;
   padding: 2rem;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  text-align: center;
 }
 
 .page-title {
   font-size: 2rem;
-  color: #004aad;
+  color: #1e40af;
+  margin-bottom: 1rem;
+}
+
+.button-primary {
+  background-color: #1d4ed8;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button-primary:hover {
+  background-color: #2563eb;
+}
+
+.button-danger {
+  background-color: #dc2626;
+}
+
+.button-danger:hover {
+  background-color: #b91c1c;
 }

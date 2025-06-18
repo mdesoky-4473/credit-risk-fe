@@ -19,6 +19,8 @@ export default function LoginPage() {
       });
 
       localStorage.setItem("token", res.data.token);
+      localStorage.removeItem("predictionHistory");
+      localStorage.removeItem("lastPrediction");
       setIsLoggedIn(true); //
     } catch (err) {
       console.error(err);
@@ -27,8 +29,9 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="p-4 max-w-md mx-auto">
-      <h2 className="text-xl font-bold mb-4">Login</h2>
+    <div className="dashboard-wrapper">
+      
+      <h2 className="page-title">Login</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           className="w-full border p-2"
@@ -46,13 +49,15 @@ export default function LoginPage() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
+        <button type="submit" className="button-primary">
           Login
         </button>
       </form>
 
       {isLoggedIn && <p className="text-green-600 mt-2">Login successful!</p>}
+
       {error && <p className="text-red-600 mt-2">{error}</p>}
-    </div>
+  </div>
+  
   );
 }

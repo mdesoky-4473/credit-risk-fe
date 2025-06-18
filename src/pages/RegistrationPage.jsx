@@ -24,30 +24,32 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="p-4 max-w-md mx-auto">
-      <h2 className="text-xl font-bold mb-4">Register</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          className="w-full border p-2"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          className="w-full border p-2"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded">
-          Register
-        </button>
-      </form>
-      {message && <p className="mt-2">{message}</p>}
+    <div className = "dashboard-wrapper">
+      
+        <h2 className="page-title">Register</h2>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input
+            className="w-full border p-2"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            className="w-full border p-2"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit" className="button-primary">
+            Register
+          </button>
+        </form>
+        {message && <p className="mt-2">{message}</p>}
     </div>
+   
   );
 }
