@@ -10,11 +10,11 @@ function App() {
   return (
     <Router>
       <div className="dashboard-wrapper">
-        <nav className="bg-gray-800 text-white px-4 py-3 mb-4 flex gap-4">
-          <Link to="/" className="hover:underline">Login {" | "}  </Link>
-          <Link to="/register" className="hover:underline">Register  {" | "} </Link>
-          <Link to="/dashboard" className="hover:underline">Dashboard  {" | "} </Link>
-          <Link to="/prediction" className="hover:underline">Predict  </Link>
+        <nav className="navbar">
+          <Link to="/" className="hover:underline">Login </Link>
+          <Link to="/register" className="hover:underline">Register </Link>
+          <Link to="/dashboard" className="hover:underline">Dashboard </Link>
+          <Link to="/prediction" className="hover:underline">Predict </Link>
         </nav>
 
         <Routes>

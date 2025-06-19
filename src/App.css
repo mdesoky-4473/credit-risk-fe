@@ -3,23 +3,19 @@ body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #f9fafb;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* so page scroll still works */
   min-height: 100vh;
 }
 
-/* === Card wrapper used by each page === */
+
 .card {
-  width: 100%;
-  max-width: 600px;
-  background: #ffffff;
+  width: 50%;
   padding: 2rem;
-  margin: 2rem;
+  margin: 1.5rem auto; 
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,.08);
   text-align: center;
 }
+
 
 /* === Form layout === */
 .form-grid {
@@ -71,8 +67,29 @@ select {
 .dashboard-wrapper {
   max-width: 1000px;
   padding: 2rem;
-  margin-top: 2rem;
+  margin: 0 auto; /* horizontally centers the entire wrapper */
 }
+
+
+.dashboard-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.dashboard-left {
+  flex: 1 1 55%;
+  min-width: 300px;
+
+}
+
+.dashboard-right {
+  flex: 1 1 40%;
+  min-width: 300px;
+  max-width: 500px;
+}
+
 
 .page-title {
   font-size: 1.75rem;
@@ -114,3 +131,37 @@ select {
 }
 
 
+.navbar {
+  background-color: #1f2937; /* dark gray */
+  color: white;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;  
+  gap: 1.25rem;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.chart-section {
+  margin-bottom: 2rem;
+  padding: 1rem 1rem 2.5rem 1rem; /* bottom padding increased */
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+.chart-wrapper {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}

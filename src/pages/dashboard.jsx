@@ -63,63 +63,76 @@ function Dashboard() {
 
   return (
     <div className="dashboard-wrapper">
-      <h2 className="page-title">Welcome to Your Dashboard</h2>
+     <h2 className="page-title">Welcome to Your Dashboard</h2>
+     
+      <div className="dashboard-grid">
+        
+        <div className="dashboard-left">
+          
+          {lastResult ? (
+            <div className="card">
+              <h3><strong>Last Prediction:</strong></h3>
+              <p>Purpose: <span className="value">{lastResult.loan_purpose}</span></p>
+              <p>Status: <span className="value">{lastResult.decision.toUpperCase()}</span></p>
+              <p>Risk Score: <span className="value">{Number(lastResult.risk_score).toPrecision(2)}</span></p>
+            </div>
+          ) : (
+            <p className="info-text">You haven't made a prediction yet.</p>
+          )}
 
-      {lastResult ? (
-        <div className="card">
-          <h3><strong>Last Prediction:</strong></h3>
-          <p>Purpose: <span className="value">{lastResult.loan_purpose}</span></p>
-          <p>Status: <span className="value">{lastResult.decision.toUpperCase()}</span></p>
-          <p>Risk Score: <span className="value">{Number(lastResult.risk_score).toPrecision(2)}</span></p>
+          {history.length > 1 && (
+            <div className="history-section">
+              <h3 className="section-title">Recent Predictions</h3>
+              <ul className="history-list">
+                {history.slice(1, 6).map((entry, index) => (
+                  <li key={index}>
+                    {entry.loan_purpose} | {entry.decision.toUpperCase()} | Score: {Number(entry.risk_score).toPrecision(2)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
         </div>
-      ) : (
-        <p className="info-text">You haven't made a prediction yet.</p>
-      )}
 
-      {history.length > 1 && (
-        <div className="history-section">
-          <h3 className="section-title">Recent Predictions</h3>
-          <ul className="history-list">
-            {history.slice(1, 6).map((entry, index) => (
-              <li key={index}>
-                {entry.loan_purpose} | {entry.decision.toUpperCase()} | Score: {Number(entry.risk_score).toPrecision(2)}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+        <div className="dashboard-right">
+        
+          {history.length > 1 && (
+              <div className="chart-section">
+                <h3 className="section-title">Predictions by Loan Purpose</h3>
+                 <div className="chart-wrapper">
+                    <ResponsiveContainer width="100%" height={380}>
+                      <BarChart data={aggregateData()}>
+                        <XAxis 
+                          dataKey="loan_purpose" 
+                          angle={-60} 
+                          textAnchor="end" 
+                          interval={0} 
+                          height={150}
+                        />
+                        <YAxis allowDecimals={false} />
+                        <Tooltip />
+                        <Legend layout="vertical" verticalAlign="middle" align="right" />
+                        <Bar dataKey="approve" stackId="a" fill="#4ade80" />
+                        <Bar dataKey="deny" stackId="a" fill="#f87171" />
+                      </BarChart>
+                    </ResponsiveContainer>
+                </div>    
+              </div>
+            )}
 
-     {history.length > 1 && (
-        <div className="chart-section">
-          <h3 className="section-title">Predictions by Loan Purpose</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={aggregateData()}>
-              <XAxis 
-                dataKey="loan_purpose" 
-                angle={-8} 
-                textAnchor="end" 
-                interval={0} 
-              />
-              <YAxis />
-              <Tooltip />
-              <Legend layout="vertical" verticalAlign="middle" align="right" />
-              <Bar dataKey="approve" stackId="a" fill="#4ade80" />
-              <Bar dataKey="deny" stackId="a" fill="#f87171" />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      )}
-
-
-      <div className="button-row">
-        <button onClick={handleNewPrediction} className="button-primary">
-          Make New Prediction
-        </button>
-        <button onClick={handleLogout} className="button-primary button-danger">
-          Logout
-        </button>
+            <div className="button-row">
+              <button onClick={handleNewPrediction} className="button-primary">
+                Make New Prediction
+              </button>
+              <button onClick={handleLogout} className="button-primary button-danger">
+                Logout
+              </button>
+            </div>
+        </div>    
       </div>
     </div>
+    
   );
 }
 
