@@ -30,7 +30,7 @@ export default function PredictionPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3000/api/predict", {
+      const res = await fetch("https://credit-risk-be.onrender.com/api/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
