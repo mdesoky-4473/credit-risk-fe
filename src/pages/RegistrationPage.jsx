@@ -11,7 +11,7 @@ export default function RegisterPage() {
     setMessage("");
 
     try {
-      await axios.post("http://localhost:3000/api/auth/register", {
+      await axios.post("https://credit-risk-be.onrender.com/api/auth/register", {
         username: email,
         password,
       });

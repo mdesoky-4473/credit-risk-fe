@@ -13,7 +13,7 @@ export default function LoginPage() {
     setIsLoggedIn(false);
 
     try {
-      const res = await axios.post("http://localhost:3000/api/auth/login", {
+      const res = await axios.post("https://credit-risk-be.onrender.com/api/auth/login", {
         username: email,
         password,
       });
