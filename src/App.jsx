@@ -9,7 +9,7 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="dashboard-wrapper">
+      <div className="app-container">
         <nav className="navbar">
           <Link to="/" className="hover:underline">Login </Link>
           <Link to="/register" className="hover:underline">Register </Link>

@@ -165,3 +165,28 @@ select {
   overflow-x: auto;
   padding-bottom: 1rem;
 }
+
+/* App.css */
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  input {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
