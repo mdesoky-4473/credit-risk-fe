@@ -1,6 +1,5 @@
 /* === Global page layout === */
 
-
 .card {
   max-width: 500px;
   width: 90%;
@@ -9,7 +8,7 @@
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   text-align: center;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
   box-sizing: border-box;
 }
 
@@ -62,9 +61,10 @@ select {
 .button-danger:hover { background: #b91c1c; }
 
 .dashboard-wrapper {
-  max-width: 1000px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 2rem;
-  margin: 0 auto; /* horizontally centers the entire wrapper */
 }
 
 
@@ -78,7 +78,6 @@ select {
 .dashboard-left {
   flex: 1 1 55%;
   min-width: 300px;
-
 }
 
 .dashboard-right {
@@ -86,7 +85,6 @@ select {
   min-width: 300px;
   max-width: 500px;
 }
-
 
 .page-title {
   font-size: 1.75rem;
@@ -163,12 +161,6 @@ select {
   padding-bottom: 1rem;
 }
 
-/* App.css */
-.app-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 1rem;
-}
 
 @media (max-width: 600px) {
   .app-container {

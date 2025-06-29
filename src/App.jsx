@@ -9,7 +9,6 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="app-container">
         <nav className="navbar">
           <Link to="/" className="hover:underline">Login </Link>
           <Link to="/register" className="hover:underline">Register </Link>
@@ -24,7 +23,6 @@ function App() {
           <Route path="/prediction" element={<PredictionPage />} />
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
-      </div>
     </Router>
   );
 }

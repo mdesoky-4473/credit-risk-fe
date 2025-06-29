@@ -81,7 +81,7 @@ function Dashboard() {
           )}
 
           {history.length > 1 && (
-            <div className="history-section">
+            <div className="card">
               <h3 className="section-title">Recent Predictions</h3>
               <ul className="history-list">
                 {history.slice(1, 6).map((entry, index) => (
@@ -98,7 +98,7 @@ function Dashboard() {
         <div className="dashboard-right">
         
           {history.length > 1 && (
-              <div className="chart-section">
+              <div className="card">
                 <h3 className="section-title">Predictions by Loan Purpose</h3>
                  <div className="chart-wrapper">
                     <ResponsiveContainer width="100%" height={380}>
