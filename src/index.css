@@ -4,7 +4,19 @@
   padding: 0;
 }
 
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9fafb;
+  background: 
+    linear-gradient(to bottom right, #f0f4f8, #e2e8f0),
+    url('https://images.squarespace-cdn.com/content/v1/6775a9410cb071258cbf5576/6c08fcfc-132a-47e9-9a38-e69aa4766bba/img-5.jpg?format=1000w');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-blend-mode: overlay;
+  color: #1f2937;
+  min-height: 100vh;
+  line-height: 1.6;
+  padding: 1rem;
 }
+

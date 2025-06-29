@@ -1,19 +1,16 @@
 /* === Global page layout === */
-body {
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #f9fafb;
-  min-height: 100vh;
-}
 
 
 .card {
-  width: 50%;
+  max-width: 500px;
+  width: 90%;
   padding: 2rem;
-  margin: 1.5rem auto; 
+  margin: 2rem auto;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   text-align: center;
+  background-color: #fff;
+  box-sizing: border-box;
 }
 
 
