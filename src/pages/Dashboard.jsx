@@ -54,7 +54,7 @@ function Dashboard() {
 
   if (!isAuthorized) {
     return (
-      <div className="unauthorized-container">
+      <div className="card">
         <h2 className="unauthorized-title">Unauthorized</h2>
         <p>Please log in or register to access this page.</p>
       </div>

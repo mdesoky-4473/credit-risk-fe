@@ -17,7 +17,7 @@ export default function PredictionPage() {
   if (!token) {
     return (
       <div className="card">
-        <h2 className="page-title">Unauthorized</h2>
+        <h2 className="unauthorized-title">Unauthorized</h2>
         <p>Please log in or register to access predictions.</p>
       </div>
     );
